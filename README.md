@@ -71,8 +71,3 @@ You can customize the following variables to suit your needs:
 -   **`Code.gs`**: Change the `FOLDER_NAME` constant at the top of the script to your desired Google Drive folder name.
 -   **`background.js`**: Update the `APPS_SCRIPT_WEB_APP_URL` if you ever re-deploy your Apps Script.
 
----
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
