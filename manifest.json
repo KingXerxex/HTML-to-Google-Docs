@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Save Page to Google Docs",
   "version": "1.4",
-  "description": "Adds a button to save an intranet page as a Google Doc.",
+  "description": "APPS_SCRIPT_WEB_APP_URL",
   "permissions": [
     "scripting" 
   ],
@@ -26,4 +26,5 @@
       "js": ["content.js"]
     }
   ]
+
 }
