@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'savePage') {
-        const APPS_SCRIPT_WEB_APP_URL = 'Deploy Script in Apps Script as a Web App and place the url HERE';
+        const APPS_SCRIPT_WEB_APP_URL = 'APPS_SCRIPT_WEB_APP_URL';
         fetch(APPS_SCRIPT_WEB_APP_URL, {
             method: 'POST',
             headers: {
@@ -24,4 +24,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
        
         return true; 
     }
+
 });
