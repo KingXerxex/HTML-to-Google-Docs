@@ -1,4 +1,17 @@
 function doPost(e) {
+  const SPREADSHEET_ID = "SPREADSHEET_ID"; //Insert Spreadsheet ID from a sheet that can be used as a Extension Access List - On this list email addresses will be placed to limit access to the tool
+  const userEmail = Session.getActiveUser().getEmail();
+  
+  const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheets()[0];
+  const data = sheet.getRange("A:A").getValues();
+  const approvedUsers = data.flat().filter(String);
+
+  if (!approvedUsers.includes(userEmail)) {
+    Logger.log("Access Denied for user: " + userEmail);
+    return ContentService
+      .createTextOutput("Error: Access Denied. You are not authorized to use this tool.")
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
   try {
     const FOLDER_NAME = "Policy Documents"; 
     const postData = JSON.parse(e.postData.contents);
